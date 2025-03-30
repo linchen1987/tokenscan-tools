@@ -44,6 +44,8 @@ const ganache: Chain = {
 };
 
 const flareTestnet: Chain = {
+  // 114 coston2
+  // 16 coston
   id: 16,
   name: 'Flare Coston',
   rpcUrls: {
@@ -65,7 +67,7 @@ const flareTestnet: Chain = {
 };
 
 const flareSongbirdNet: Chain = {
-  id: 16,
+  id: 19,
   name: 'Flare Songbird',
   rpcUrls: {
     default: { http: ['https://songbird-api.flare.network/ext/bc/C/rpc'] },
