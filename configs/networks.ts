@@ -1,4 +1,4 @@
-import { mainnet, flare } from 'viem/chains';
+import { mainnet, flare, sepolia } from 'viem/chains';
 import { Chain } from 'viem';
 
 export const ETH_MAINNET_PROVIDER = 'https://eth.llamarpc.com';
@@ -29,6 +29,62 @@ const ganacheSepolia: Chain = {
   },
 };
 
+const ganache: Chain = {
+  id: 137,
+  name: 'Ganache',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Ether',
+    symbol: 'ETH',
+  },
+  rpcUrls: {
+    default: { http: ['http://127.0.0.1:7545'] },
+    public: { http: ['http://127.0.0.1:7545'] },
+  },
+};
+
+const flareTestnet: Chain = {
+  id: 16,
+  name: 'Flare Coston',
+  rpcUrls: {
+    default: { http: ['https://coston-api.flare.network/ext/bc/C/rpc'] },
+    public: { http: ['https://coston-api.flare.network/ext/bc/C/rpc'] },
+  },
+  nativeCurrency: {
+    name: 'Coston',
+    symbol: 'CFLR',
+    decimals: 18,
+  },
+  blockExplorers: {
+    default: {
+      name: 'Flare Explorer',
+      url: 'https://coston-explorer.flare.network/',
+      apiUrl: 'https://coston-api.flare.network/ext/bc/C/rpc',
+    },
+  },
+};
+
+const flareSongbirdNet: Chain = {
+  id: 16,
+  name: 'Flare Songbird',
+  rpcUrls: {
+    default: { http: ['https://songbird-api.flare.network/ext/bc/C/rpc'] },
+    public: { http: ['https://songbird-api.flare.network/ext/bc/C/rpc'] },
+  },
+  nativeCurrency: {
+    name: 'Songbird',
+    symbol: 'SGB',
+    decimals: 18,
+  },
+  blockExplorers: {
+    default: {
+      name: 'Songbird Explorer',
+      url: 'https://songbird-explorer.flare.network/',
+      apiUrl: 'https://songbird-api.flare.network/ext/bc/C/rpc',
+    },
+  },
+};
+
 const hardhat: Chain = {
   id: 31337,
   name: 'Hardhat',
@@ -46,6 +102,10 @@ const hardhat: Chain = {
 export const CHAINS = {
   mainnet,
   flare,
+  flareTestnet,
+  flareSongbirdNet,
   hardhat,
   ganacheSepolia,
+  ganache,
+  sepolia,
 };
